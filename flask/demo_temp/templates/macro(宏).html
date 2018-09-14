@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+宏
+<form>
+    <label>用户名：</label><input type="text" name="username"><br/>
+    <label>身份证号：</label><input type="text" name="idcard"><br/>
+    <label>密码：</label><input type="password" name="password"><br/>
+    <label>确认密码：</label><input type="password" name="password2"><br/>
+    <input type="submit" value="注册">
+</form>
+<hr>
+宏实现marco函数
+{% macro input(label='',type='text',value='',name='') %}
+
+<label>{{ label }}</label><input type="{{ type }}"name="{{ name }}">
+{% endmacro %}
+
+<form>
+    {{ input('用户名',name='username') }}<br/>
+    {{ input('密码',type='password',name='password') }}<br/>
+    {{ input('确认密码',type='password',name='password') }}<br/>
+    {{ input(type='submit',value='提交') }}<br/>
+</form>
+<hr>
+导入宏实现
+{% import 'macroALL.html' as func %}
+<form>
+{#    {{ func.input }}#}
+    {{ func.input('用户名',name='username') }}<br/>
+    {{ func.input('密码',type='password',name='password') }}<br/>
+    {{ func.input('确认密码',type='password',name='password') }}<br/>
+    {{ func.input(type='submit',value='提交') }}<br/>
+</form>
+</body>
+</html>

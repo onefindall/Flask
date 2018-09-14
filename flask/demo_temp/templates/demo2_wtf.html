@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+我是表单
+{#<form method="post">#}
+{#    <label>用户名：</label><input type="text" name="username"><br/>#}
+{#    <label>密码：</label><input type="password" name="password"><br/>#}
+{#    <label>确认密码：</label><input type="password" name="password2"><br/>#}
+{#    <input type="submit" value="注册">#}
+{#</form>#}
+{#{%  for message in get_flashed_messages() %}#}
+{#{{ message }}#}
+{#{% endfor %}#}
+
+<hr>
+
+<form method="post">
+    {{ form.username.label }} {{ form.username }}<br/>
+    {{ form.password.label }} {{ form.password }}<br/>
+    {{ form.password2.label }} {{ form.password2 }}<br/>
+    {{ form.submit }}<br/>
+</form>
+</body>
+</html>

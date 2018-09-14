@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{{config['DEBUG'] }}<br/>
+{{config.DEBUG }}<br/>
+{{ request.url }}<br/>
+{#请求上下文两个变量#}
+{{ session.name }}<br/>
+{{ session.password }}<br/>
+{#应用上下文中1个变量#}
+{{ g.name }}
+<hr/>
+两个可以直接使用的函数
+url_for反解析函数
+<a href="{{ url_for('index') }}">回到首页</a>
+<br/>
+获得闪现消息:(运用在登陆场景中如果登陆失败的话就会返回一个错误提示)
+{#get_flashed_messages这个是模板里面有的#}
+
+{% for message in get_flashed_messages() %}
+    {{ message}}
+{% endfor %}
+</body>
+</html>

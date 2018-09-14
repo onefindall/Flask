@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+fsng
+<br>
+{{ my_list }}
+<p>
+{{ my_dict }}
+</p>
+<p>
+{{ my_str }}
+    </p>
+<p>
+{{ my_int }}
+ </p>
+<br>
+{{ my_html }}
+<br/>
+{{ my_int + 20}}
+<br/>
+{{ my_int * my_list[2]}}
+<br/>
+{{ my_dict['name']}}
+<br/>
+{{ my_dict.age}}
+{# {{ 取值
+列表list[下标]或者list.下标
+字典dict[键]或者dict.键
+一般都用前者}}#}
+
+{{ 'tianjia' | upper}}<br/>
+{{ 'HIHAO' | lower}}<br/>
+{{ 'ithem' | reverse}}<br/>
+{{ 'hello11' | title }}<br/>
+{{ '%s is %d' | format('name',17) }}<br/>
+{{ '<h1>hello</h1>'| striptags }}<br/>
+{{ 'hello every one' | truncate(9) }}<br/>
+{% filter upper %}
+{#    #一大堆文字##}
+    张山的
+{% endfilter %}
+#flask特有
+{{ 'ithem' | reverse | upper}}<br/>
+{{ 'hello' | capitalize}}
+
+列表过滤器
+{{ my_list | list }}<br/>
+{{ my_list | length }}<br/>
+{{ my_list | sort(reverse=True) }}<br/>
+
+{#{{safe 按照html格式显示
+使用safe进行该字符串是安全
+如果使用safe识别字符串是安全的，那么按照html进行显示或者执行}}#}
+{{ my_str | safe }}
+{{ my_str | escape }}
+
+{# {{  使用过滤器传参数Total: {{ items|sum(attribute='price') }}}}#}
+<br/>
+总价：{{ my_dict_list | sum(attribute='price') }}
+
+列表反转
+{{ my_list | reverse }}#这个reverse不能在列表里面用
+===><list_reverseiterator object at 0x7f59a557f240>
+{{ my_list | lireverse }}<br>
+{{ my_list }}
+</body>
+</html>
